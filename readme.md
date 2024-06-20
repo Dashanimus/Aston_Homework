@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Lesson 1. Методы. Циклы. Массивы. *Задания в файле Main.*
