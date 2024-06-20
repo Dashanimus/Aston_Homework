@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Здесь небольшой автотест по поиску элемента на главной странице Google :D
