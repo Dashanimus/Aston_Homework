@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Lesson 2. Классы. Объекты. Конструкторы. *Задание 2 - массив впихнут в Main*
