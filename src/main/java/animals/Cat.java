@@ -53,8 +53,8 @@ public class Cat extends Animal {
 
         // Если для кота в миске достаточно еды
         if (feeder.feed >= this.gluttony) {
-            feeder.feed -= this.gluttony; // уменьшаем количество еды в миске
-            this.satiety = true; // кот теперь сыт
+            feeder.feed -= this.gluttony; // Уменьшаем количество еды в миске
+            this.satiety = true; // Кот теперь сыт
             System.out.print("Кот теперь сыт. ");
         } else {
             System.out.print("Коту не хватило еды. ");
