@@ -1,7 +1,7 @@
 package figures;
 
 public class Square extends ColoredFigure implements GeometricFigure {
-    public double a; // Сторона квадрата
+    public double a;
 
     public Square(double a, String fillColor, String borderColor) {
         super(fillColor, borderColor);
@@ -9,13 +9,11 @@ public class Square extends ColoredFigure implements GeometricFigure {
     }
 
     @Override
-    // Периметр квадрата = 4 * а
     public double perimeter() {
         return 4.0 * this.a;
     }
 
     @Override
-    // Площадь квадрата = a^2
     public double area() {
         return this.a * this.a;
     }

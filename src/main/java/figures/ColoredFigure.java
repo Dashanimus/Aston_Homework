@@ -1,9 +1,8 @@
 package figures;
 
-// Класс цветных фигур от него наслед. поля с цветами во всех геометрических фигурах
 public abstract class ColoredFigure {
-    public String fillColor; // Цвет фона фигуры
-    public String borderColor; // Цвет границы фигуры
+    public String fillColor;
+    public String borderColor;
 
     public ColoredFigure(String fillColor, String borderColor) {
         this.fillColor = fillColor;
