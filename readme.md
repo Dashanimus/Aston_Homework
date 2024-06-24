@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Lesson 3. Наследование. Интерфейсы. Инкапсуляция. *Задание 1 - в animals. Задание 2 - в figures.*
