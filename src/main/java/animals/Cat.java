@@ -7,9 +7,8 @@ public class Cat extends Animal {
     public boolean satiety;
     public int gluttony;
 
-    // Сделала класс миски с едой вложенным, т. к. кормим только котов
     public static class Feeder {
-        private int feed; // Количество еды в миске
+        private int feed;
 
         public void fillFeeder(int n) {
             feed = feed + n;
@@ -43,6 +42,7 @@ public class Cat extends Animal {
     }
 
     public void feedCat(Feeder feeder){
+
         if (this.satiety) {
             System.out.println("Кот сыт, количество еды в миске не изменилось.");
         }
