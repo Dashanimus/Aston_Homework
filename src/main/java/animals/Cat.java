@@ -1,6 +1,7 @@
 package animals;
 
 public class Cat extends Animal {
+
     public final static int runRangeMax = 200;
     static int cnt = 0;
     public boolean satiety;
@@ -33,6 +34,7 @@ public class Cat extends Animal {
     @Override
     public void run(int range) {
         super.run(range);
+
         if (range <= runRangeMax) {
             System.out.println("Кот пробежал " + range + " метров.");
         } else {
@@ -41,10 +43,10 @@ public class Cat extends Animal {
     }
 
     public void feedCat(Feeder feeder){
+
         if (this.satiety) {
             System.out.println("Кот сыт, количество еды в миске не изменилось.");
         }
-
         if (feeder.feed >= this.gluttony) {
             feeder.feed -= this.gluttony;
             this.satiety = true;
