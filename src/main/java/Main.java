@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Драйвер для работы с Selenium
-        System.setProperty("webdriver.chromedriver", "E:\\Intellij Idea Projects\\Aston_Homework\\chromedriver.exe");
+        System.setProperty("webdriver.chromedriver", "\"C:\\Program Files\\Google\\Tools\\chromedriver.exe\"");
         WebDriver driver = new ChromeDriver();
 
         // Поиск элемента на странице Google
