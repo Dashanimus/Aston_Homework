@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Lesson 6 (Лекция 10). Знакомство с Junit 5.
