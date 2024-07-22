@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-It's Main Branch.
+Lesson 8 (Лекция 14). Знакомство с Selenium.
