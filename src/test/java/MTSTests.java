@@ -28,7 +28,7 @@ public class MTSTests {
     @Test
     @DisplayName("Проверка полей ввода 'Услуги связи'")
     public void emptyFieldsTestConnection() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Увеличено время ожидания
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']")));
         dropdown.click();
         WebElement option = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='Услуги связи']")));
@@ -105,13 +105,13 @@ public class MTSTests {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='Услуги связи']"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-phone"))).sendKeys("297777777");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum"))).sendKeys("200");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum"))).sendKeys("10");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pay-connection']/button"))).click();
 
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='bepaid-iframe']")));
 
-        assertEquals("200.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".pay-description__cost > span:nth-child(1)"))).getText(), "Сумма платежа должна быть 200.00 BYN");
-        assertEquals("Оплатить 200.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".colored.disabled[type='submit']"))).getText(), "Текст кнопки оплаты должен быть 'Оплатить 200.00 BYN'");
+        assertEquals("10.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".pay-description__cost > span:nth-child(1)"))).getText(), "Сумма платежа должна быть 10.00 BYN");
+        assertEquals("Оплатить 10.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".colored.disabled[type='submit']"))).getText(), "Текст кнопки оплаты должен быть 'Оплатить 10.00 BYN'");
         assertEquals("Оплата: Услуги связи Номер:375297777777", driver.findElement(By.cssSelector(".pay-description__text span")).getText());
 
 
