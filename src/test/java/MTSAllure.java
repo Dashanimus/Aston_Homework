@@ -1,18 +1,18 @@
-import java.time.Duration;
-import org.openqa.selenium.By;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Description;
 import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class MTSTests {
-
+public class MTSAllure {
     public static WebDriver driver;
 
     @BeforeAll
@@ -26,7 +26,8 @@ public class MTSTests {
     }
 
     @Test
-    @DisplayName("Проверка полей ввода 'Услуги связи'")
+    @DisplayName("Проверка плейсхолдеров полей 'Услуги связи' ")
+    @Description("Тест проверяет правильность отображения плейсхолдеров в полях 'Услуги связи'")
     public void emptyFieldsTestConnection() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']")));
@@ -44,7 +45,8 @@ public class MTSTests {
     }
 
     @Test
-    @DisplayName("Проверка полей ввода 'Домашний интернет'")
+    @DisplayName("Проверка плейсхолдеров полей 'Домашний интернет'")
+    @Description("Тест проверяет правильность отображения плейсхолдеров в полях 'Домашний интернет'")
     public void emptyFieldsTestInternet() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']")));
@@ -62,7 +64,8 @@ public class MTSTests {
     }
 
     @Test
-    @DisplayName("Проверка полей ввода 'Рассрочка'")
+    @DisplayName("Проверка плейсхолдеров полей 'Рассрочка'")
+    @Description("Тест проверяет правильность отображения плейсхолдеров в полях 'Рассрочка'")
     public void emptyFieldsTestInstallment() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']")));
@@ -80,7 +83,8 @@ public class MTSTests {
     }
 
     @Test
-    @DisplayName("Проверка полей ввода 'Задолженность'")
+    @DisplayName("Проверка плейсхолдеров полей 'Задолженность' ")
+    @Description("Тест проверяет правильность отображения плейсхолдеров в полях 'Задолженность'")
     public void emptyFieldsTestDebt() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']")));
@@ -98,22 +102,22 @@ public class MTSTests {
     }
 
     @Test
-    @DisplayName("Корректность отображения суммы, номера телефона, полей для ввода реквизитов карты, наличие иконок платёжных систем")
+    @DisplayName(" Корректность отображения суммы, номера телефона, плейсхолдеров для ввода реквизитов карты, наличие иконок платёжных систем.")
+    @Description("Тест проверяет корректность отображения суммы (в том числе на кнопке), номера телефона, а также надписей в незаполненных полях для ввода реквизитов карты, наличие иконок платёжных систем.")
     public void FieldsTetionSumMobile() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='select__header']"))).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[text()='Услуги связи']"))).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-phone"))).sendKeys("297777777");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum"))).sendKeys("10");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("connection-sum"))).sendKeys("200");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='pay-connection']/button"))).click();
 
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@class='bepaid-iframe']")));
 
-        assertEquals("10.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".pay-description__cost > span:nth-child(1)"))).getText(), "Сумма платежа должна быть 10.00 BYN");
-        assertEquals("Оплатить 10.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".colored.disabled[type='submit']"))).getText(), "Текст кнопки оплаты должен быть 'Оплатить 10.00 BYN'");
+        assertEquals("200.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".pay-description__cost > span:nth-child(1)"))).getText(), "Сумма платежа должна быть 200.00 BYN");
+        assertEquals("Оплатить 200.00 BYN", wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".colored.disabled[type='submit']"))).getText(), "Текст кнопки оплаты должен быть 'Оплатить 200.00 BYN'");
         assertEquals("Оплата: Услуги связи Номер:375297777777", driver.findElement(By.cssSelector(".pay-description__text span")).getText());
-
 
         String[] labels = {
                 "Номер карты", "Срок действия", "CVC"

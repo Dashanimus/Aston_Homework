@@ -1,2 +1,2 @@
 # Aston QA Engineer Java Lessons
-Lesson 8 (Лекция 14). Знакомство с Selenium.
+Lesson 10 (Лекция 18). Знакомство с Allure.
