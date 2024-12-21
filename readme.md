@@ -1,2 +1,2 @@
-# Aston QA Engineer Java Lessons
-Lesson 7 (Лекция 13). Знакомство с Selenium.
+# Курс Автоматизации Тестирования "Астон"
+Lesson 7: Знакомство с Selenium.
