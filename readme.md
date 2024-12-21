@@ -1,2 +1,2 @@
-# Aston QA Engineer Java Lessons
-Lesson 10 (Лекция 18). Знакомство с Allure.
+# Курс Автоматизации Тестирования "Астон"
+Lesson 10: Знакомство с Allure.
