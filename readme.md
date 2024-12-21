@@ -1,2 +1,2 @@
-# Aston QA Engineer Java Lessons
-Lesson 9 (Лекция 17). Postman. API.
+# Курс Автоматизации Тестирования "Астон"
+Lesson 9: Postman. API.
